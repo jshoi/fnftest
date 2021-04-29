@@ -1204,6 +1204,39 @@
                                     x="194"
                                     xsi:type="notation:Bounds" y="46"/>
                                     </children>
+                                    <children type="4002 bw.generalactivities.log">
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="맑은 고딕"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.12"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="310"
+                                    xsi:type="notation:Bounds" y="46"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1362,7 +1395,7 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.11"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1370,6 +1403,17 @@
             <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.10"/>
             <bendpoints points="[-24, 22, 78, -71]$[-77, 71, 25, -22]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="맑은 고딕" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.11"/>
+            <bendpoints points="[-24, 10, 194, -83]$[-193, 83, 25, -10]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1428,6 +1472,8 @@
             tibex:propertySource="Output_File_1" type="xsd:string"/>
         <bpws:variable element="ns12:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:ActivityInput" name="Log1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:ActivityInput"
+            name="Copy_1_Log1-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1450,7 +1496,8 @@
                 <bpws:link name="ParseJSON1ToRenderJSON1" tibex:linkType="SUCCESS"/>
                 <bpws:link name="RenderJSON1ToWriteFile1" tibex:linkType="SUCCESS"/>
                 <bpws:link name="LogToLog1" tibex:linkType="SUCCESS"/>
-                <bpws:link name="Log1ToReadFile" tibex:linkType="SUCCESS"/>
+                <bpws:link name="Log1ToCopy_1_Log1" tibex:linkType="SUCCESS"/>
+                <bpws:link name="Copy_1_Log1ToReadFile" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1487,7 +1534,7 @@
                     name="ReadFile" outputVariable="ReadFile"
                     tibex:xpdlId="4ed826ef-034a-49f1-973b-ffb69530a44b" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="Log1ToReadFile"/>
+                        <bpws:target linkName="Copy_1_Log1ToReadFile"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="ReadFileToInvokeRESTAPI"/>
@@ -1820,7 +1867,40 @@
                         <bpws:target linkName="LogToLog1"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="Log1ToReadFile"/>
+                        <bpws:source linkName="Log1ToCopy_1_Log1"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;2&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.log"
+                            version="6.0.0.001"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value controlBy="Application"
+                                    role="Info"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="Copy_1_Log1-input" name="Copy_1_Log1"
+                    tibex:xpdlId="fd036acc-7468-46b5-8c21-3cc450d6303d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="Log1ToCopy_1_Log1"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="Copy_1_Log1ToReadFile"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
