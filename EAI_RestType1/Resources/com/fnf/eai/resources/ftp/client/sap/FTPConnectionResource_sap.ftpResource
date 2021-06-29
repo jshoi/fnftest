@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftpconnection="http://ns.tibco.com/bw/palette/ftpconnection" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_cDA6IIw7Eeubae-_U3cyPQ" name="com.fnf.eai.resources.ftp.client.sap.FTPConnectionResource_sap" type="ftpconnection:ftpconnection">
+  <jndi:configuration xsi:type="ftpconnection:FTPConnection" xmi:id="_cDA6IYw7Eeubae-_U3cyPQ" mode="Passive" remoteFileNameEncoding="Cp1252" proxyPort="8080">
+    <substitutionBindings xmi:id="_3S6TUNiBEeu5fILr9ASRfQ" template="password" propName="//SharedModule///SAP_INFO/FTP/password"/>
+    <substitutionBindings xmi:id="_44E6UNiBEeu5fILr9ASRfQ" template="host" propName="//SharedModule///SAP_INFO/hostname"/>
+    <substitutionBindings xmi:id="_7DtrcNiBEeu5fILr9ASRfQ" template="port" propName="//SharedModule///SAP_INFO/port"/>
+    <substitutionBindings xmi:id="_8F-ZsNiBEeu5fILr9ASRfQ" template="userName" propName="//SharedModule///SAP_INFO/FTP/username"/>
+  </jndi:configuration>
+</jndi:namedResource>

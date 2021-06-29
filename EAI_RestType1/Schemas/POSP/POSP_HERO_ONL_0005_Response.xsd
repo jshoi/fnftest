@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/POSP_HERO_ONL_0005_Response" xmlns:tns="http://www.example.org/POSP_HERO_ONL_0005_Response" elementFormDefault="qualified">
+   <element name="element">
+        <complexType>
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="RESPONSE_CD" type="string"/>
+      <element maxOccurs="1" minOccurs="1" name="RESPONSE_MSG" type="string"/>
+      <element maxOccurs="unbounded" minOccurs="1" name="RESPONSE_DATA" nillable="true">
+        <complexType>
+          <sequence>
+          	<element maxOccurs="1" minOccurs="1" name="AUTH_REALNAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="JOIN_DATE" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="CID" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="NAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GENDER" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="BIRTH_DAY" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="ADDR" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="PHONE_MOBILE" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="STATUS_NAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="STATUS" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="SLEEP_YN" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GET_AMOUNT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GET_POINT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="USE_POINT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="NOW_POINT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GRADE" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GRADE_NAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="BUY_LAST" type="string" nillable="true" />
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+        </complexType>
+    </element>
+
+   <element name="datas">
+   	<complexType>
+   		<sequence>
+   			<element name="RESPONSE_DATA" minOccurs="0" maxOccurs="unbounded">
+   				<complexType>
+   					<sequence>
+          	<element maxOccurs="1" minOccurs="1" name="AUTH_REALNAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="JOIN_DATE" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="CID" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="NAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GENDER" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="BIRTH_DAY" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="ADDR" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="PHONE_MOBILE" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="STATUS_NAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="STATUS" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="SLEEP_YN" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GET_AMOUNT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GET_POINT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="USE_POINT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="NOW_POINT" type="decimal" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GRADE" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="GRADE_NAME" type="string" nillable="true" />
+          	<element maxOccurs="1" minOccurs="1" name="BUY_LAST" type="string" nillable="true" />
+   					</sequence>
+   				</complexType>
+   			</element>
+   		</sequence>
+   	</complexType>
+   </element>
+
+</schema>

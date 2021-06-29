@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_b3Mq4YeJEeuZxPtUHr0d9w" name="com.fnf.eai.resources.db.online.JDBC_OBA" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_b4AjMIeJEeuZxPtUHr0d9w" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_b4AjMYeJEeuZxPtUHr0d9w">
+    <substitutionBindings xmi:id="_3K66UNiUEeu5fILr9ASRfQ" template="username" propName="//SharedModule///OBA_INFO/username"/>
+    <substitutionBindings xmi:id="_4Vt5gNiUEeu5fILr9ASRfQ" template="password" propName="//SharedModule///OBA_INFO/password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_b4AjMoeJEeuZxPtUHr0d9w" jdbcDriver="org.postgresql.Driver">
+      <substitutionBindings xmi:id="_6BAWoNiUEeu5fILr9ASRfQ" template="dbURL" propName="//SharedModule///OBA_INFO/url"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

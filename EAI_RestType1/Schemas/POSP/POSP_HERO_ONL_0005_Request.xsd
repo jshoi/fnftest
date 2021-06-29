@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/POSP_HERO_ONL_0005_Request"
+	xmlns:tns="http://www.example.org/POSP_HERO_ONL_0005_Request"
+	elementFormDefault="qualified">
+
+	<element name="element">
+		<complexType>
+			<sequence>
+				<element name="REQUEST">
+					<complexType>
+						<sequence>
+							<element name="V_TYPE" type="string" minOccurs="1" maxOccurs="1"></element>
+							<element name="V_CID" type="string" minOccurs="1" maxOccurs="1"></element>
+							<element name="V_BRAND" type="string" minOccurs="1" maxOccurs="1" nillable="true"></element>
+							<element name="V_NAME" type="string" minOccurs="1" maxOccurs="1" nillable="true"></element>
+							<element name="V_MOBILE_R4" type="string" minOccurs="1" maxOccurs="1" nillable="true"></element>
+							<element name="V_MOBILE" type="string" minOccurs="1" maxOccurs="1" nillable="true"></element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

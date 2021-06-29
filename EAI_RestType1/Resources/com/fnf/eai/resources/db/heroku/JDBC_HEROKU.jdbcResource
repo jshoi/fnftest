@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_O9KkcFDCEeujkcWfXO7YSA" name="com.fnf.eai.resources.db.heroku.JDBC_HEROKU" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_O-faIFDCEeujkcWfXO7YSA" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_O-faIVDCEeujkcWfXO7YSA">
+    <substitutionBindings xmi:id="_U_OLMNiCEeu5fILr9ASRfQ" template="maxConnections" propName="//SharedModule///CRM_INFO/maxconnection"/>
+    <substitutionBindings xmi:id="_WnoTcNiCEeu5fILr9ASRfQ" template="username" propName="//SharedModule///CRM_INFO/username"/>
+    <substitutionBindings xmi:id="_YTZ4wNiCEeu5fILr9ASRfQ" template="password" propName="//SharedModule///CRM_INFO/password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_O-faIlDCEeujkcWfXO7YSA" jdbcDriver="org.postgresql.Driver" dbURL="jdbc:postgresql://&lt;servername>:&lt;portnumber>/&lt;dbname>">
+      <substitutionBindings xmi:id="_aZTOQNiCEeu5fILr9ASRfQ" template="dbURL" propName="//SharedModule///CRM_INFO/url"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

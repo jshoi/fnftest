@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_VTUlsGIPEeumtv-3cPihNw" name="com.fnf.eai.resources.db.merp.JDBC_GSCM" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_VTUlsWIPEeumtv-3cPihNw" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_VTUlsmIPEeumtv-3cPihNw">
+    <substitutionBindings xmi:id="_snuoYNiUEeu5fILr9ASRfQ" template="username" propName="//SharedModule///GSCM_INFO/username"/>
+    <substitutionBindings xmi:id="_uoRj0NiUEeu5fILr9ASRfQ" template="password" propName="//SharedModule///GSCM_INFO/password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_VTUls2IPEeumtv-3cPihNw" jdbcDriver="oracle.jdbc.OracleDriver">
+      <substitutionBindings xmi:id="_mV2aoNiUEeu5fILr9ASRfQ" template="dbURL" propName="//SharedModule///GSCM_INFO/url"/>
+    </connectionConfig>
+    <connectionProperties xmi:id="_ji2Jhdh-Eeu5fILr9ASRfQ" key="jarFile" value="ojdbc"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://www.example.com/namespaces/tns/1610583409932" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://www.example.com/namespaces/tns/1610583409932">
+  <xsd:element name="JobInfo" type="tns:JobInfo">
+  </xsd:element>
+
+  <xsd:element name="TxInfo" type="tns:TxInfo">
+  </xsd:element>
+
+  <xsd:complexType name="JobTotal">
+  	<xsd:sequence>
+  		<xsd:element ref="tns:JobInfo"></xsd:element>
+  		<xsd:element ref="tns:TxInfo"></xsd:element>
+  	</xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="JobInfo">
+  	<xsd:sequence>
+  		<xsd:element name="IF_ID" type="xsd:string" />
+  		<xsd:element name="TR_ID" type="xsd:string" />
+
+  		<xsd:element name="SOURCE_PATH" type="xsd:string"
+  			minOccurs="0" maxOccurs="1" nillable="true">
+  		</xsd:element>
+  		<xsd:element name="CLIENT_IP" type="xsd:string" minOccurs="0"
+  			maxOccurs="1">
+  		</xsd:element>
+  		<xsd:element name="CLIENT_PORT" type="xsd:string"
+  			minOccurs="0" maxOccurs="1">
+  		</xsd:element>
+  	</xsd:sequence>
+  </xsd:complexType>
+
+    <xsd:complexType name="TxInfo">
+    	<xsd:sequence>
+    		<xsd:element name="PROC_TM" type="xsd:dateTime" />
+    		<xsd:element name="PROC_CNT" type="xsd:int" />
+    		<xsd:element name="STEP">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:string">
+    					<xsd:enumeration value="START"></xsd:enumeration>
+    					<xsd:enumeration value="END"></xsd:enumeration>
+    					<xsd:enumeration value="ERROR"></xsd:enumeration>
+
+    					<xsd:enumeration value="SEND"></xsd:enumeration>
+    					<xsd:enumeration value="COMPLETE"></xsd:enumeration>
+    					<xsd:enumeration value="INSERT"></xsd:enumeration>
+    					<xsd:enumeration value="SELECT"></xsd:enumeration>
+    					<xsd:enumeration value="UPDATE"></xsd:enumeration>
+    					<xsd:enumeration value="DELETE"></xsd:enumeration>
+    					<xsd:enumeration value="FUNCTION"></xsd:enumeration>
+    					<xsd:enumeration value="PRODUCER"></xsd:enumeration>
+    					<xsd:enumeration value="INVOKE"></xsd:enumeration>
+    					<xsd:enumeration value="PARSER"></xsd:enumeration>
+    					<xsd:enumeration value="RENDER"></xsd:enumeration>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="ERROR_MSG" type="xsd:string"
+    			minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="ERROR_STACKTRACE" type="xsd:string"
+    			minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="DEBUG" type="xsd:string" minOccurs="0"></xsd:element>
+    		<xsd:element name="DEBUG_DATA" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="ERROR_ACTIVITY" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="ERROR_CODE" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="DATA_CNT" type="xsd:int" minOccurs="0" maxOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="JobTotal" type="tns:JobTotal"></xsd:element>
+</xsd:schema>
