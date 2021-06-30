@@ -1930,9 +1930,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Repeat" tibex:group="repeatUntil"
-                tibex:indexOriginalName="index"
-                tibex:indexToGlobal="false" tibex:xpdlId="296279f3-e380-4488-867d-121b5f029211">
+            <bpws:scope name="Repeat" tibex:group="repeatUntil" tibex:xpdlId="296279f3-e380-4488-867d-121b5f029211">
                 <bpws:targets>
                     <bpws:target linkName="LOG_PARSERToRepeat"/>
                 </bpws:targets>
