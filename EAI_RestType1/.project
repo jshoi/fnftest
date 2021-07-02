@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>EAI_RestType1</name>
+	<name>EAI_Template_Rest</name>
 	<comment></comment>
 	<projects>
 		<project>SharedModule</project>

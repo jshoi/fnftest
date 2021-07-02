@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EAI_RestType1 Application
-Bundle-SymbolicName: EAI_RestType1.application
+Bundle-SymbolicName: EAI_Template_Rest.application
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: TIBCO Software Inc.
 TIBCO-BW-Version: 6.7.0 V34 2020-11-06
