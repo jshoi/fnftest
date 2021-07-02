@@ -9,6 +9,32 @@
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
+    "/CouponFullDetail" : {
+      "post" : {
+        "summary" : "postPOSP_HERO_ONL_2",
+        "description" : "postPOSP_HERO_ONL_2",
+        "operationId" : "post-CouponFullDetail",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "type" : "string"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
     "/UseCoupon" : {
       "post" : {
         "summary" : "postPOSP_HERO_ONL_2",

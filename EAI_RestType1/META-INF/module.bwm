@@ -56,6 +56,18 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_lhdRoZkMEeu-bd5PsjGydg" bindingName="RestService7"/>
   </sca:service>
+  <sca:service xmi:id="_yJr5EdrZEeumXMJWE1ZOIw" name="CouponFullDetail" promote="ComponentPOSP_HERO_ONL_2/CouponFullDetail">
+    <sca:interface.wsdl xmi:id="_yJvjctrZEeumXMJWE1ZOIw" interface="http://xmlns.example.com/20210209184958PLT#wsdl.interface(CouponFullDetail1)" scaext:wsdlLocation="../Processes/com/fnf/eai/posp/hero/rest/POSP_HERO_ONL_2.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_yJvjc9rZEeumXMJWE1ZOIw" name="RestService" path="/CouponFullDetail" docBasePath="http://localhost:7777/EAI_Template_Rest" docResourcePath="POSP_HERO_ONL_2" basePath="/" connector="com.fnf.eai.resources.http.server.eai.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/com.fnf.eai.posp.hero.rest.POSP_HERO_ONL_2-POSP_HERO_ONL_2.json">
+      <operation xmi:id="_yJ5UcNrZEeumXMJWE1ZOIw" operationName="post" nickname="post-CouponFullDetail" httpMethod="POST" notes="postPOSP_HERO_ONL_2" responseStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_yJ5UedrZEeumXMJWE1ZOIw"/>
+      <advancedConfig xmi:id="_yJvjdNrZEeumXMJWE1ZOIw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_yJ5UcdrZEeumXMJWE1ZOIw" bindingName="RestService"/>
+  </sca:service>
   <sca:property xmi:id="_VyyrcGXqEeuhFpGsQLsBaA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Vy2V0GXqEeuhFpGsQLsBaA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Vy284GXqEeuhFpGsQLsBaA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -75,6 +87,9 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_K-wUYWq8Eeur2-o9eWiBIg" processName="com.fnf.eai.posp.hero.rest.POSP_HERO_ONL_2"/>
     <sca:service xmi:id="_lfSucJkMEeu-bd5PsjGydg" name="UseCoupon">
       <sca:interface.wsdl xmi:id="_lfTVgJkMEeu-bd5PsjGydg" interface="http://xmlns.example.com/20210209184958PLT#wsdl.interface(UseCoupon)"/>
+    </sca:service>
+    <sca:service xmi:id="_yJiIENrZEeumXMJWE1ZOIw" name="CouponFullDetail">
+      <sca:interface.wsdl xmi:id="_yJr5ENrZEeumXMJWE1ZOIw" interface="http://xmlns.example.com/20210209184958PLT#wsdl.interface(CouponFullDetail1)"/>
     </sca:service>
   </sca:component>
   <sca:component xmi:id="_LSmmYG__EeuTIrd96tX6Vg" name="Componenthealthcheck" compositeext:version="1.0.0.qualifier">
